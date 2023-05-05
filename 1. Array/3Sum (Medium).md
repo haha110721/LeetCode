@@ -1,0 +1,76 @@
+3Sum (Medium)
+===
+
+Problem: https://leetcode.com/problems/3sum/
+
+---
+
+1. two pointer
+```python
+# time: O(n^2), space: O(1)
+
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        nums.sort()
+
+        for i in range(len(nums)-2): # 因為要三個數，所以只需要循環到 len()-2 就好
+            if (i == 0) or (i > 0 and nums[i] != nums[i-1]):
+                j, k = i+1, len(nums)-1 # 兩個 pointer
+                
+                target = 0 - nums[i]
+
+                while j < k: # 大的 pointer 一定要大於小的 pointer
+                    if nums[j] + nums[k] == target:
+                        res.append([nums[i], nums[j], nums[k]])
+                        while j < k and nums[j] == nums[j+1]:
+                            j += 1
+                        while j < k and nums[k] == nums[k-1]:
+                            k -= 1
+                        j += 1
+                        k -= 1 
+                    elif nums[j] + nums[k] < target:
+                        j += 1
+                    else:
+                        k -= 1
+        return res
+```
+
+2. set
+```python
+from collections import defaultdict
+
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        res = []
+
+        pos = defaultdict(int)
+        neg = defaultdict(int)
+        zero = 0
+
+        for x in nums:
+            if x < 0:
+                neg[x] += 1
+            elif x > 0:
+                neg[x] += 1
+            else:
+                zero += 1
+        
+        if zero:
+            for x in pos:
+                if -x in neg:
+                    res.append([x, -x, 0])
+            
+            if zero > 2:
+                res.append([0, 0, 0])
+        
+        for set_a, set_b in ((neg, pos), (pos, neg)):
+            set_a_items = list(set_a.items())
+            for i, (x, q) in enumerate(set_a_items):
+                for x2, q2 in set_a_items[i:]:
+                    if x != x2 or (x == x2 and q > 1):
+                        if -x-x2 in set_b:
+                            res.append((x, x2, -x-x2))
+
+        return res
+```
