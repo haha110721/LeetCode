@@ -1,0 +1,35 @@
+Two Sum (Easy)
+===
+
+Problem: https://leetcode.com/problems/two-sum/
+
+---
+
+1. 暴力法
+```python
+# time: O(n^2), space: O(1)
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)-1):
+            for j in range(i+1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+```
+
+2. 這題不能用 two pointer，如果是"已排序"資料才可以用
+
+3. (沒想到) Hash Table
+```python
+# time: O(n), space: O(n)
+
+class Solution:
+    def twoSum(self, nums, target):
+        d = {}
+        for i in range(len(nums)):
+            num1 = nums[i]
+            num2 = target - num1
+            if num2 in d:
+                return [i, d[num2]] # key 是值，value 是 index
+            d[num1] = i 
+```
