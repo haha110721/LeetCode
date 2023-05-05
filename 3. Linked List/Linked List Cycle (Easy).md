@@ -1,0 +1,51 @@
+Linked List Cycle (Easy)
+===
+
+Problem: https://leetcode.com/problems/linked-list-cycle/
+
+---
+
+1. 暴力法
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        visited = []
+        
+        while head:
+            if head in visited:
+                return True
+            else:
+                visited.append(head)
+            head = head.next
+        
+        return False
+```
+
+2. Floyd's Tortoise and Hare (Cycle Detection)
+```python
+# time: O(n), space: O(1)
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        fast = head
+        slow = head        
+        
+        # 快的跑兩格，慢的跑一格，如果有 cycle，快的會追上慢的
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            if slow == fast:
+                return True
+        
+        return False
+```
+
+
+
+
