@@ -30,7 +30,7 @@ class MinStack:
 ```        
 
 2. 用兩個 list
-```
+```python
 class MinStack:
 
     def __init__(self):
