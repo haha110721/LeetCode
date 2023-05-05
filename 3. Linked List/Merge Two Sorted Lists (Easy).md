@@ -32,7 +32,7 @@ class Solution:
         if list1: # 如果只剩 list1 有值
             temp.next = list1
         elif list2: # 如果只剩 list2 有值
-            temp.next = list2
-```          
+            temp.next = list2         
 
         return dummy.next
+```
