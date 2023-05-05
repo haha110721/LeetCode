@@ -22,7 +22,7 @@ class Solution:
 
 2. (time limit exceed) 暴力法
 ```python
-time: O(n^2), space: O(1)
+# time: O(n^2), space: O(1)
 
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
