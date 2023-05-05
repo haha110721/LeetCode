@@ -2,6 +2,7 @@ Best Time to Buy and Sell Stock (Easy)
 ===
 
 Problem: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
 ---
 
 1. (我沒想到) min, max
