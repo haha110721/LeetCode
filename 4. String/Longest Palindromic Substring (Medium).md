@@ -1,0 +1,39 @@
+Longest Palindromic Substring (Medium)
+===
+
+Problem: https://leetcode.com/problems/longest-palindromic-substring/description/
+
+---
+
+1.
+```python
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        start = 0 # 紀錄開始的位置
+        maxlength = 1 # 紀錄目前最大回文的長度
+
+        if len(s) <= 1 or s == s[::-1]: # 判斷字串的長度是否小於等於1，或是字串本身就是回文
+            return s
+
+        for i in range(1, len(s)):
+            # 跑第一圈時，odd 不找，even 要找 s[0:2]
+            # 跑第二圈時，odd 要找 s[0:3]，even 要找 s[1:3]
+            # 跑第三圈時，odd 要找 s[1:4]，even 要找 s[2:4]
+            
+            odd = s[i-maxlength-1 : i+1] # 代表這個字串長度奇數
+            even = s[i-maxlength : i+1] # 代表這個字串長度偶數
+
+            if i-maxlength-1 >= 0 and odd == odd[::-1]: # 如果回文，確定 start 是從這邊開始，然後因為是奇數所以長度 +2
+                start = i-maxlength-1
+                maxlength = maxlength + 2
+
+            if i-maxlength >= 0 and even == even[::-1]:
+                start = i-maxlength
+                maxlength = maxlength + 1
+            
+        return s[start:start+maxlength]
+```
+            
+
+
+        
