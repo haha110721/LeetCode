@@ -3,8 +3,8 @@ Lowest Common Ancestor of a Binary Search Tree (Medium)
 
 Problem: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 
-Compare: [Lowest Common Ancestor of a Binary Tree (Medium)]
-Problem: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/
+Compare: [Lowest Common Ancestor of a Binary Tree (Medium)]  
+Problem: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/  
 My_GitHub: https://github.com/haha110721/Grind-75/edit/main/6.%20Binary%20Tree%20(DFS%20%26%20BFS)/Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20(Medium).md
 
 ---
