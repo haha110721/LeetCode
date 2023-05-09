@@ -9,7 +9,7 @@ My_GitHub: https://github.com/haha110721/Grind-75/blob/main/7.%20Binary%20Search
 
 ---
 
-1. (要想一下)
+1. (要想一下) DFS
 ```python
 # time: O(n), space: O(1)
 
