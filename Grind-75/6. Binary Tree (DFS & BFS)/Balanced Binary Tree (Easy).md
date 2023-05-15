@@ -26,7 +26,7 @@ class Solution:
         
         leftheight, rightheight = self.Height(root.left), self.Height(root.right)
         
-        if leftheight < 0 or rightheight < 0 or abs(leftheight - rightheight) > 1:  
+        if leftheight < 0 or rightheight < 0 or abs(leftheight - rightheight) > 1: # 代表這個 subtree 已經不 balanced 了  
             return -1
         
         return max(leftheight, rightheight) + 1 # 是因為我現在在這個 node，所以高度會 +1
