@@ -1,4 +1,4 @@
-(Trie) Implement Trie (Prefix Tree)
+(Trie) Implement Trie (Prefix Tree) (Medium)
 ===
 
 Problem: https://leetcode.com/problems/implement-trie-prefix-tree/description/
