@@ -6,7 +6,7 @@ Problem: https://leetcode.com/problems/string-to-integer-atoi/
 ---
 
 1.
-```
+```python
 # time: O(n), space: O(1)
 
 class Solution:
@@ -40,7 +40,7 @@ class Solution:
 ```
 
 2.
-```
+```python
 class Solution:
     def myAtoi(self, str: str) -> int:
         value, state, pos, sign = 0, 0, 0, 1
