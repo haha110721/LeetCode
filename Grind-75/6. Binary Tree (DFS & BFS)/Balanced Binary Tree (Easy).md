@@ -5,15 +5,17 @@ Problem: https://leetcode.com/problems/balanced-binary-tree/
 
 ---
 
+```python
+Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+```
+
 1. (我要想一下) 遞迴 
 ```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         return (self.Height(root) >= 0)
@@ -27,7 +29,7 @@ class Solution:
         if leftheight < 0 or rightheight < 0 or abs(leftheight - rightheight) > 1:  
             return -1
         
-        return max(leftheight, rightheight) + 1
+        return max(leftheight, rightheight) + 1 # 是因為我現在在這個 node，所以高度會 +1
 ```
         
 
