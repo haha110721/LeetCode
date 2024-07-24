@@ -31,3 +31,12 @@ class Solution:
             if counter > len(nums) // 2:
                 return i
 ```                
+
+3. Sorting   
+```python
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        nums.sort()
+        n = len(nums)
+        return nums[n//2]
+```
