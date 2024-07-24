@@ -34,6 +34,8 @@ class Solution:
 
 3. Sorting   
 ```python
+# time: O(n log n)
+
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         nums.sort()
