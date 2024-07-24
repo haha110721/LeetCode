@@ -42,3 +42,18 @@ class Solution:
         n = len(nums)
         return nums[n//2]
 ```
+
+4. Hash Map
+```python
+# time: O(n)
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        app_dict = defaultdict(int) # 使用 defaultdict 表示每當訪問一個不存在的鍵時，默認值為 0
+        for i in nums:
+            app_dict[i] += 1
+            
+        for k, v in app_dict.items():
+            if v > len(nums)//2:
+                return k
+```
