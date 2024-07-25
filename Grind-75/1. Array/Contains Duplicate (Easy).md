@@ -5,7 +5,7 @@ Problem: https://leetcode.com/problems/contains-duplicate/
 
 ---
 
-1. (這題這樣跑不動呀)
+1. (time limit exceeded)
 ```python
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
@@ -32,7 +32,7 @@ class Solution:
 
 3. sort
 ```python
-# time: O(nlogn), space: O(1)
+# time: O(n log n), space: O(1)
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
