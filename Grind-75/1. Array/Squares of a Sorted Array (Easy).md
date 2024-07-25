@@ -1,4 +1,5 @@
-## Squares of a Sorted Array (Easy)
+Squares of a Sorted Array (Easy)
+===
 
 Problem: https://leetcode.com/problems/squares-of-a-sorted-array/
 
@@ -6,6 +7,8 @@ Problem: https://leetcode.com/problems/squares-of-a-sorted-array/
 
 1. 暴力法
 ```python
+# time: O(n log n), space: O(n)
+
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
         abs_nums = []
@@ -21,6 +24,8 @@ class Solution:
 
 2. two pointers
 ```python
+# time: O(n), space: O(n)
+
 class Solution:
     def sortedSquares(self, A: List[int]) -> List[int]:
         result = [None for _ in A]
