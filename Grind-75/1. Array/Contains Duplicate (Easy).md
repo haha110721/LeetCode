@@ -5,7 +5,9 @@ Problem: https://leetcode.com/problems/contains-duplicate/
 
 ---
 
-1. (time limit exceeded)
+1. (time limit exceeded)               
+
+1-1.
 ```python
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
@@ -16,6 +18,7 @@ class Solution:
                     return True
         return False
 ```
+1-2.
 ```python
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
