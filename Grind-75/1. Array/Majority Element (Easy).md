@@ -18,13 +18,19 @@ Moore’s Voting Algorithm 假設：
 
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        sol = None
-        cnt = 0 # cnt 用作投票
-        for i in nums:
-            if cnt == 0:
-                sol = i
-            cnt += (1 if i == sol else -1)
-        return sol
+        count = 0
+        candidate = 0
+        
+        for num in nums:
+            if count == 0:
+                candidate = num
+            
+            if num == candidate:
+                count += 1
+            else:
+                count -= 1
+        
+        return candidate
 ```
 
 2. (time limit exceed) 暴力法
