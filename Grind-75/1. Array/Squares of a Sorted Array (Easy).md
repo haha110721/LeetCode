@@ -27,15 +27,17 @@ class Solution:
 # time: O(n), space: O(n)
 
 class Solution:
-    def sortedSquares(self, A: List[int]) -> List[int]:
-        result = [None for _ in A]
-        left, right = 0, len(A) - 1
-        for index in range(len(A)-1, -1, -1):
-            if abs(A[left]) > abs(A[right]):
-                result[index] = A[left] ** 2
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        ans = [0] * n
+        left, right = 0, n-1
+
+        for i in range(n-1, -1, -1):
+            if abs(nums[left]) >= abs(nums[right]):
+                ans[i] = nums[left] * nums[left]
                 left += 1
             else:
-                result[index] = A[right] ** 2
+                ans[i] = nums[right] * nums[right]
                 right -= 1
-        return result
+        return ans
 ```
