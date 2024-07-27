@@ -1,5 +1,5 @@
-# Grind-75
-My solutions for 75 LeetCode questions in Python.   
+# Grind
+My solutions for LeetCode questions in Python.   
 
 Questions can be found：    
 - Grind 75：https://www.techinterviewhandbook.org/grind75     
