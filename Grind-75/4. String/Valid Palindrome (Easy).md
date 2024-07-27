@@ -13,7 +13,8 @@ class Solution:
         return new_s.lower() == new_s[::-1].lower()
 ```
 
-2. two pointer          
+2. two pointer
+   
 2-1.
 ```python
 # time: O(n), space: O(1)
