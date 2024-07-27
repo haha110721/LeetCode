@@ -14,6 +14,7 @@ class Solution:
 ```
 
 2. two pointer
+2-1.
 ```python
 # time: O(n), space: O(1)
 
@@ -27,6 +28,23 @@ class Solution:
     			else:
     				i, j = i + 1, j - 1
     				continue
-    		i, j = i + (not a.isalnum()), j - (not b.isalnum())
+    		i, j = i + (not a.isalnum()), j - (not b.isalnum()) # 盡量不要這樣用
     	return True
-```      
+```
+
+2-2.
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        i, j = 0, len(s) - 1
+        while i < j:
+            while (s[i].isalnum()==False) and i < j: # 不然怕它一直加一直減會違反 i < j
+                i += 1
+            while (s[j].isalnum()==False) and i < j:
+                j -= 1
+            if s[i].lower() != s[j].lower():
+                return False
+            else:
+                i, j = i+1, j-1
+        return True
+```
