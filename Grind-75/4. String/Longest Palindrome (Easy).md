@@ -5,7 +5,7 @@ Problem: https://leetcode.com/problems/longest-palindrome/
 
 ---
 
-1. (我寫的)
+1. hash map
 ```python
 class Solution:
     def longestPalindrome(self, s: str) -> int:
@@ -25,7 +25,7 @@ class Solution:
             return res
 ```
 
-2. (別人寫的) set
+2. 用 set
 ```python
 # time: O(n), space: O(n)
 
@@ -47,29 +47,23 @@ class Solution:
 
 3. (別人寫的)
 ```python
-import collections
-
 class Solution:
-    def longestPalindrome(self, s):
-        c = collections.Counter(s)
-
-        output = 0 # 答案
-
-        odd_found = False # 看不懂這個 odd_found 是幹嘛的???
-        
-        for count in c.values():
-            if odd_found:
-                if count > 1: # 數量是 2, 3, 4, 5...
-                    if count % 2 == 0:
-                        output += count
-                    else:
-                        output += count - 1
+    def longestPalindrome(self, s: str) -> int:
+        odd_count = 0
+        d = {}
+        for ch in s:
+            if ch in d:
+                d[ch] += 1
             else:
-                if count % 2 == 0:
-                    output += count
-                else:
-                    output += count
-                    odd_found = True
-        return output
+                d[ch] = 1
+
+            if d[ch] % 2 == 1: # 檢查是不是奇數
+                odd_count += 1
+            else:
+                odd_count -= 1
+
+        if odd_count > 1:
+            return len(s) - odd_count + 1
+        return len(s)
 ```
 
