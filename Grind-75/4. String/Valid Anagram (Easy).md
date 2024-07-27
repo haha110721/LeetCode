@@ -7,13 +7,19 @@ Problem: https://leetcode.com/problems/valid-anagram/
 
 1. 直接用 sorted
 ```python
+# time: O(n log n), space: O(1)
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         return sorted(s) == sorted(t)
 ```
       
-2. 用 collections
+2. hash table
+
+2-1.
 ```python
+# time: O(n)
+
 import collections
 
 class Solution:
@@ -24,6 +30,28 @@ class Solution:
         return all(x == 0 for x in tracker.values())
 ```
 
+2-2.
+```python
+# time: O(n)
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        mydict = defaultdict(int)
+
+        if len(s) != len(t):
+            return False
+        
+        for i in s:
+            mydict[i] += 1
+        for i in t:
+            mydict[i] -= 1
+        
+        for v in mydict.values():
+            if v != 0:
+                return False
+        return True
+```
+
 3. 用 set & .count()
 ```python
 class Solution:
@@ -32,8 +60,8 @@ class Solution:
             return False
 
         for idx in set(s):
-            # Compare s.count(l) and t.count(l) for every index i from 0 to 26...
-            # If they are different, return false...
+            # Compare s.count(l) and t.count(l) for every index i from 0 to 26
+            # If they are different, return false
             if s.count(idx) != t.count(idx):
                 return False
         return True 
