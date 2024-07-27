@@ -5,7 +5,7 @@ Problem: https://leetcode.com/problems/contains-duplicate-ii/description/?envTyp
 
 ---
 
-Hash Table
+1. Hash Table
 ```python
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
