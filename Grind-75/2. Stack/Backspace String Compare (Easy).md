@@ -5,7 +5,7 @@ Problem: https://leetcode.com/problems/backspace-string-compare/
 
 ---
 
-1.
+1. stack
 ```python
 
 
