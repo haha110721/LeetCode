@@ -18,11 +18,11 @@ Problem: https://leetcode.com/problems/merge-two-sorted-lists/
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         dummy = ListNode()
-        temp = dummy # dummy 不會動，所以 ans 要返回 dummy.next
+        temp = dummy # temp 會遍歷 dummy 這個 linked list, 而最後返回的是 dummy.next (head 指向)
 
         while list1 and list2: # 當兩邊都還有值
             if list1.val < list2.val:
-                temp.next = list1 # 因為他是指到 id，不是指到 val
+                temp.next = list1 # 因為指到 node，不是指到 val
                 list1 = list1.next
             elif list1.val >= list2.val:
                 temp.next = list2
