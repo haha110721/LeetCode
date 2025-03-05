@@ -16,14 +16,15 @@ Problem: https://leetcode.com/problems/linked-list-cycle/
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         visited = []
-        
+
         while head:
             if head in visited:
                 return True
             else:
                 visited.append(head)
+
             head = head.next
-        
+
         return False
 ```
 
