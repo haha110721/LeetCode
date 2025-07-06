@@ -18,6 +18,21 @@ You are also given a 2D array queries, where each query is one of the following 
 Return an array of integers representing the results of each query of type [1, x] in the order they appear.
 
 Note: The power grid preserves its structure; an offline (non‑operational) node remains part of its grid and taking it offline does not alter connectivity.©leetcode
+
+
+Example 1:
+
+Input: c = 5, connections = [[1,2],[2,3],[3,4],[4,5]], queries = [[1,3],[2,1],[1,1],[2,2],[1,2]]
+
+Output: [3,2,3]
+
+Explanation:
+Initially, all stations {1, 2, 3, 4, 5} are online and form a single power grid.
+Query [1,3]: Station 3 is online, so the maintenance check is resolved by station 3.
+Query [2,1]: Station 1 goes offline. The remaining online stations are {2, 3, 4, 5}.
+Query [1,1]: Station 1 is offline, so the check is resolved by the operational station with the smallest id among {2, 3, 4, 5}, which is station 2.
+Query [2,2]: Station 2 goes offline. The remaining online stations are {3, 4, 5}.
+Query [1,2]: Station 2 is offline, so the check is resolved by the operational station with the smallest id among {3, 4, 5}, which is station 3.©leetcode
 ```
 
 ---
