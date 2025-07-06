@@ -46,7 +46,7 @@ class Solution:
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
         parent = [i for i in range(n)]
-        rank = [1] * n
+        rank = [1] * n  # store 這個 root 連接的 node 數量
 
         def find(n1):
             res = n1
@@ -60,11 +60,11 @@ class Solution:
         def union(n1, n2):
             p1, p2 = find(n1), find(n2)
 
-            if p1 == p2:
+            if p1 == p2:  # 當 parent 一樣表示他們已經被連接在一起了
                 return 0
 
             if rank[p2] > rank[p1]:
-                parent[p1] = p2
+                parent[p1] = p2  # p2 是 p1 的 parent
                 rank[p2] += rank[p1]
             else:
                 parent[p2] = p1
@@ -73,6 +73,6 @@ class Solution:
 
         res = n
         for n1, n2 in edges:
-            res -= union(n1, n2)
+            res -= union(n1, n2)  # 全部的 node 數量減去連接幾次就是剩幾個 connected component
         return res
 ```
