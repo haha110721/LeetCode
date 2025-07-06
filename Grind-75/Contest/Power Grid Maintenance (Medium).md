@@ -39,7 +39,7 @@ class Solution:
             root = uf.find(station)
             if root not in grid_online:
                 grid_online[root] = []
-            heapq.heappush(grid_online[root], station)  # 建立 grid_online，表示誰有同一個 root
+            heapq.heappush(grid_online[root], station)  # 建立 grid_online，表示誰有同一個 root。ex. grid_online = {1: [2, 3, 4, 5]}
 
         res = []
 
