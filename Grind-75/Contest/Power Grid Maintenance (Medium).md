@@ -71,7 +71,7 @@ class Solution:
             root = uf.find(station)
             if root not in grid_online:
                 grid_online[root] = []
-            heapq.heappush(grid_online[root], station)  # 建立最小的
+            heapq.heappush(grid_online[root], station)  # 建立 grid_online，表示誰有同一個 root
 
         res = []
 
@@ -85,9 +85,8 @@ class Solution:
                     root = uf.find(x)
                     heap = grid_online[root]
 
-                    # 清除 heap 裡面已經 offline 的 station
                     while heap and heap[0] not in station_online:
-                        heapq.heappop(heap)
+                        heapq.heappop(heap)  # 清除 heap 裡面已經 offline 的 station
 
                     if heap:
                         res.append(heap[0])
