@@ -12,6 +12,7 @@ Problem: https://leetcode.com/problems/flood-fill/
 
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
+
         start_color = image[sr][sc]
 
         def flood(x, y):
@@ -25,10 +26,10 @@ class Solution:
             else:
                 image[x][y] = color  # 如果和 start_color 一樣，而且還沒染過，就染他
 
-            flood(x+1, y)
-            flood(x-1, y)
-            flood(x, y+1)
-            flood(x, y-1)
+            flood(x + 1, y)
+            flood(x - 1, y)
+            flood(x, y + 1)
+            flood(x, y - 1)
         
         flood(sr, sc)
         return image
