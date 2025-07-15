@@ -18,10 +18,9 @@ Problem: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/d
 #         self.left = None
 #         self.right = None
 
-
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        if not root: # reach a dead end, I didn't find anything here
+        if not root:  # reach a dead end, I didn't find anything here
             return None
 
         if root.val == p.val or root.val == q.val:
