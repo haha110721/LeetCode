@@ -21,7 +21,7 @@ class Solution:
         return j
 ```
 
-2. (這題會跑不動) 遞迴
+2. (XX: TLE) 遞迴
 ```python
 class Solution(object):
     def climbStairs(self, n: int) -> int:
