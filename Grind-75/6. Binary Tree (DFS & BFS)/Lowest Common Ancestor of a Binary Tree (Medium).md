@@ -23,12 +23,13 @@ class Solution:
         if not root:  # reach a dead end, I didn't find anything here
             return None
 
-        if root.val == p.val or root.val == q.val:
+        if root == p or root == q:  # 如果當前節點是 p 或 q → 回傳這個節點
             return root
 
         left = self.lowestCommonAncestor(root.left, p, q)
         right = self.lowestCommonAncestor(root.right, p, q)
 
+        # 如果只有左邊或右邊有找到目標節點，就把那個找到的往上回傳；但如果左右兩邊都有找到，代表這個 root 就是他們的共同祖先（LCA）
         if not left:
             return right
         if not right:
